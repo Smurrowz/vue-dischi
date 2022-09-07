@@ -1,6 +1,7 @@
 <template>
   <main>
-    <div class="my-container">
+    <div  class="my-container">
+      <LoaderContent :content="listAlbums" />
 
       <AlbumCard :albums="listAlbums" />
 
@@ -10,10 +11,11 @@
 <script>
 import AlbumCard from './AlbumCard.vue';
 import axios from "axios";
+import LoaderContent from './LoaderContent.vue';
 
 export default {
   name: "MainContent",
-  components: { AlbumCard },
+  components: { AlbumCard, LoaderContent },
   data() {
     return {
       listAlbums: [],
