@@ -34,6 +34,8 @@ main {
 .my-card {
   background-color: $bg-blue;
   padding: 20px;
+  transition: ease-in 0.2s;
+ 
 
   & .my-card-img {
     width: 100%;
@@ -54,5 +56,8 @@ main {
       font-weight: 500;
     }
   }
+}
+.my-card:hover{
+  transform: scale(1.1);
 }
 </style>

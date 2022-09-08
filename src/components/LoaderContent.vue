@@ -15,5 +15,6 @@ export default{
 h2{
   font-size: 100px;
   color: white;
+  padding: 300px 0;
 }
 </style>
