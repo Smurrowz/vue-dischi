@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <MainHeader @search="searchAlbum" ></MainHeader>
-    <MainContent :search="searchGenre"  />
+    <MainHeader @search="searchAlbum" @searchName="searchAlbumF" @searchArtist="searchAlbumArtist" @searchYear="searchAlbumYear" ></MainHeader>
+    <MainContent :search="searchGenre" :searchAlbum="albumNameText" :searchArtist="albumArtistText" :searchYear="albumYearText"  />
   </div>
 </template>
 
@@ -19,7 +19,10 @@ export default {
 },
 data(){
   return {
-    searchGenre: ''
+    searchGenre: '',
+    albumNameText:'',
+    albumArtistText:'',
+    albumYearText:'',
   }
 },
   methods:{
@@ -27,7 +30,19 @@ data(){
       this.searchGenre = searchG
       console.log(" Genere selezionato : ", searchG)
 
-    }
+    },
+    searchAlbumF(searchA){
+      this.albumNameText = searchA
+      console.log("Nome dell'album :", searchA)
+    },
+    searchAlbumArtist(searchArt){
+      this.albumArtistText = searchArt
+      console.log("Autore dell'album :", searchArt)
+    },
+    searchAlbumYear(searchY){
+      this.albumYearText = searchY
+      console.log("Annodell'album :", searchY)
+    },
   }
 }
 </script>

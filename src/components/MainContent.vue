@@ -20,7 +20,19 @@ export default {
     search: {
       type: String,
       default: ''
-    } 
+    },
+    searchAlbum :{
+      type: String,
+      default: ''
+    },
+    searchArtist :{
+      type: String,
+      default: ''
+    },
+    searchYear :{
+      type: String,
+      default: ''
+    },
     
   },
   data() {
@@ -35,11 +47,14 @@ export default {
         
         const genre = album.genre
         const option = this.search
-        // const title = album.title
-        // const artist = album.author
-        // const year = parseInt(album.year)
+        const title = album.title.toLowerCase()
+        const titleInput = this.searchAlbum.toLowerCase()
+        const artist = album.author.toLowerCase()
+        const artistInput = this.searchArtist.toLowerCase()
+        const year = album.year
+        const yearInput = this.searchYear
         
-        if(genre.includes(option)){
+        if(genre.includes(option) && title.includes(titleInput) && artist.includes(artistInput) && year.includes(yearInput)){
           return true
         }else{
           return false

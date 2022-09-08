@@ -8,10 +8,11 @@
         <option value="Pop">Pop</option>
         <option value="Metal">Metal</option>
         <option value="Jazz">Jazz</option>
+        <option value="">Reset</option>
       </select>
-      <input v-model="albumNameText" @key="$emit('searchName',albumNameText)" type="text" class="rounded" placeholder="Album Name es: 'In Rock'">
-      <input v-model="albumArtistText" @key="$emit('searchArtist',albumArtistTex)" type="text" class="rounded" placeholder="Artist es: 'Jimi Hendrix'">
-      <input v-model="albumYearText" @key="$emit('searchYear',albumYearText)" type="number" class="rounded" placeholder="Year es: '2022'">
+      <input v-model="albumNameText" @keyup="$emit('searchName',albumNameText)" type="text" class="rounded" placeholder="Album Name es: 'In Rock'">
+      <input v-model="albumArtistText" @keyup="$emit('searchArtist',albumArtistText)" type="text" class="rounded" placeholder="Artist es: 'Jimi Hendrix'">
+      <input v-model="albumYearText" @keyup="$emit('searchYear',albumYearText)" type="number" class="rounded" placeholder="Year es: '2022'">
 
     </div>
     
@@ -25,7 +26,7 @@
         selectGenre: "",
         albumNameText: "",
         albumArtistText: "",
-        albumYear:"",
+        albumYearText:"",
       }
     }
   }
