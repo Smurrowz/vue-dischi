@@ -28,20 +28,20 @@ data(){
   methods:{
     searchAlbum(searchG){
       this.searchGenre = searchG
-      console.log(" Genere selezionato : ", searchG)
+      
 
     },
     searchAlbumF(searchA){
       this.albumNameText = searchA
-      console.log("Nome dell'album :", searchA)
+      
     },
     searchAlbumArtist(searchArt){
       this.albumArtistText = searchArt
-      console.log("Autore dell'album :", searchArt)
+      
     },
     searchAlbumYear(searchY){
       this.albumYearText = searchY
-      console.log("Annodell'album :", searchY)
+      
     },
   }
 }

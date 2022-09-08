@@ -12,7 +12,7 @@
       </select>
       <input v-model="albumNameText" @keyup="$emit('searchName',albumNameText)" type="text" class="rounded" placeholder="Album Name es: 'In Rock'">
       <input v-model="albumArtistText" @keyup="$emit('searchArtist',albumArtistText)" type="text" class="rounded" placeholder="Artist es: 'Jimi Hendrix'">
-      <input v-model="albumYearText" @keyup="$emit('searchYear',albumYearText)" type="number" class="rounded" placeholder="Year es: '2022'">
+      <input v-model="albumYearText" @click.left="$emit('searchYear',albumYearText)" @keyup="$emit('searchYear',albumYearText)" type="number" class="rounded" placeholder="Year es: '2022'">
 
     </div>
     
