@@ -1,9 +1,9 @@
 <template>
   <main>
-    <div  class="my-container">
+    <div class="my-container">
       <LoaderContent :content="listAlbums" />
-
-      <AlbumCard :albums="listAlbums" />
+      <AlbumCard :albums="filteredAlbums" />
+      
 
     </div>
   </main>
@@ -16,9 +16,35 @@ import LoaderContent from './LoaderContent.vue';
 export default {
   name: "MainContent",
   components: { AlbumCard, LoaderContent },
+  props:{
+    search: {
+      type: String,
+      default: ''
+    } 
+    
+  },
   data() {
     return {
       listAlbums: [],
+     
+    }
+  },
+  computed:{
+    filteredAlbums(){
+      return this.listAlbums.filter((album) => {
+        
+        const genre = album.genre
+        const option = this.search
+        // const title = album.title
+        // const artist = album.author
+        // const year = parseInt(album.year)
+        
+        if(genre.includes(option)){
+          return true
+        }else{
+          return false
+        }
+      })        
     }
   },
   created() {
@@ -36,5 +62,6 @@ export default {
 
 main {
   padding: 70px 0;
+  height: 100vh;
 }
 </style>

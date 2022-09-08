@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <MainHeader></MainHeader>
-    <MainContent/>
+    <MainHeader @search="searchAlbum" ></MainHeader>
+    <MainContent :search="searchGenre"  />
   </div>
 </template>
 
@@ -14,8 +14,21 @@ export default {
   name: 'App',
   components: {
     MainHeader,
-    MainContent
-}
+    MainContent,
+
+},
+data(){
+  return {
+    searchGenre: ''
+  }
+},
+  methods:{
+    searchAlbum(searchG){
+      this.searchGenre = searchG
+      console.log(" Genere selezionato : ", searchG)
+
+    }
+  }
 }
 </script>
 
